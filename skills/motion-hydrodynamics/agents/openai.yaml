@@ -1,0 +1,4 @@
+interface:
+  display_name: "Motion Hydrodynamics"
+  short_description: "Work directly on mesh, Capytaine, RAOs, and damping"
+  default_prompt: "Use $motion-hydrodynamics to update the Motion Analysis hydrodynamic workflow."

@@ -1,0 +1,58 @@
+project:
+  name: my_hull
+
+mesh:
+  path: meshes/hull.obj
+  # Use 0.001 for an OBJ exported in millimetres, 1.0 for metres.
+  scale_to_m: 1.0
+  # Translate the mesh after scaling so z=0 is the mean water surface.
+  translation_m: [0.0, 0.0, 0.0]
+  heal: true
+  closed_mesh: true
+  flip_normals: false
+  lid:
+    enabled: false
+    faces_max_radius_m: null
+
+body:
+  center_of_mass_m: [0.0, 0.0, -1.0]
+  # The centre of mass is also used as the rotation centre.
+  # null assumes equilibrium mass = displaced water mass.
+  mass_kg: null
+  # null uses a homogeneous-volume approximation. For engineering RAOs,
+  # replace with your measured/estimated 6x6 rigid-body inertia matrix.
+  inertia_matrix_6x6: null
+  # null computes restoring stiffness from the immersed hull and waterplane.
+  hydrostatic_stiffness_6x6: null
+
+environment:
+  water_density_kg_m3: 1025.0
+  gravity_m_s2: 9.81
+  free_surface_z_m: 0.0
+  # null means infinite water depth.
+  water_depth_m: null
+
+analysis:
+  wave_period_s:
+    min: 2.0
+    max: 20.0
+    count: 37
+  # Enter headings in degrees; the script converts them to Capytaine radians.
+  wave_headings_deg: [0.0, 45.0, 90.0, 135.0, 180.0]
+  degrees_of_freedom: [Surge, Sway, Heave, Roll, Pitch, Yaw]
+
+response:
+  # Target total Roll damping as a percentage of critical damping.
+  # Example: 5.0 means 5%, not 0.05. Set to 0 to disable.
+  roll_damping_target_percent: 0.0
+  # Optional mooring stiffness. Translation units: N/m;
+  # rotation units: N*m/rad. Omit or use {} for none.
+  mooring_stiffness_diagonal: {}
+
+solver:
+  n_jobs: 1
+  progress_bar: true
+  log_level: INFO
+
+output:
+  directory: outputs/my_hull

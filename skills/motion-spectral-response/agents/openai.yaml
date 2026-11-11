@@ -1,0 +1,4 @@
+interface:
+  display_name: "Motion Spectral Response"
+  short_description: "Work directly on JONSWAP, RAOs, and acceleration"
+  default_prompt: "Use $motion-spectral-response to update the Motion Analysis response workflow."

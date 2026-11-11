@@ -1,0 +1,4 @@
+interface:
+  display_name: "Motion Dashboard UI"
+  short_description: "Work directly on React screens and interactions"
+  default_prompt: "Use $motion-dashboard-ui to update one Motion Analysis dashboard screen."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Motion Local Hosting"
+  short_description: "Run, reload, deploy, and diagnose the local website"
+  default_prompt: "Use $motion-local-hosting to reload or deploy the Motion Analysis website."

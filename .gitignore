@@ -1,0 +1,17 @@
+.cache/
+.matplotlib/
+.pnpm-store/
+.venv/
+.env
+.env.*
+__pycache__/
+outputs/
+meshes/*.obj
+!meshes/.gitkeep
+*.nc
+*.netcdf
+dashboard/node_modules/
+dashboard/dist/
+dashboard/jobs/
+dashboard/sea_state_jobs/
+dashboard/response_jobs/

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Motion Sea States"
+  short_description: "Work directly on environmental data and scatter diagrams"
+  default_prompt: "Use $motion-sea-states to update the Motion Analysis sea-state workflow."
